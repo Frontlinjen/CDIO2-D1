@@ -9,9 +9,13 @@ public class OperatoerDAOMemory implements IOperatoerDAO{
 
 	private IOperatoerDTO data;
 	
+	public OperatoerDAOMemory(IOperatoerDTO data){
+		this.data = data;
+	}
+	
 	@Override
 	public OperatoerDTO getOperatoer(int oprId, String password) throws DALException {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
