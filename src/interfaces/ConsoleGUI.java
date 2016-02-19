@@ -30,7 +30,7 @@ public class ConsoleGUI implements IGUI{
 		return input.next();
 	}
 	@Override
-	public String getCpr() {
+	public int getCpr() {
 		System.out.println("Indtast CPR: ");
 		return input.next();
 	}

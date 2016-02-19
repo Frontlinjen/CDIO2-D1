@@ -5,7 +5,7 @@ public interface IGUI {
 	public int getUID();
 	public String getName();
 	public String getIni();
-	public String getCpr();
+	public int getCpr();
 	public void showMessage(String message);
 	public String getUserString(String message);
 	public int getUserSelection(String... strings);
