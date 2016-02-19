@@ -19,22 +19,22 @@ public class OperatoerDAOMemory implements IOperatoerDAO{
 	}
 
 	@Override
-	public List<OperatoerDTO> getOperatoerList() throws DALException {
+	public List<IOperatoerDTO> getOperatoerList() throws DALException {
 		return null;
 	}
 
 	@Override
-	public void createOperatoer(OperatoerDTO opr) throws DALException {
+	public void createOperatoer(IOperatoerDTO opr) throws DALException {
 
 	}
 
 	@Override
-	public void updateOperatoer(OperatoerDTO opr) throws DALException {
+	public void updateOperatoer(IOperatoerDTO opr) throws DALException {
 
 	}
 
 	@Override
-	public void deleteOperatoer(OperatoerDTO opr) throws DALException {
+	public void deleteOperatoer(IOperatoerDTO opr) throws DALException {
 
 	}
 
