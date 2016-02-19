@@ -36,8 +36,7 @@ public class ConsoleGUI implements IGUI{
 	}
 	@Override
 	public void showMessage(String message) {
-		// TODO Auto-generated method stub
-		
+		System.out.println(message);
 	}
 	@Override
 	public int getUserSelection(String... strings) {
@@ -48,7 +47,8 @@ public class ConsoleGUI implements IGUI{
 		return input.nextInt();
 	}
 	@Override
-	public String getString() {
+	public String getUserString(String message) {
+		System.out.println(message);
 		return input.next();
 	}
 }
