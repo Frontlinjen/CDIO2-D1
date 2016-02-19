@@ -2,12 +2,15 @@ package functionality;
 
 import java.util.List;
 
+import data.IOperatoerDTO;
 import data.OperatoerDTO;
 
 public class OperatoerDAOMemory implements IOperatoerDAO{
 
+	private IOperatoerDTO data;
+	
 	@Override
-	public OperatoerDTO getOperatoer(int oprId) throws DALException {
+	public OperatoerDTO getOperatoer(int oprId, String password) throws DALException {
 		// TODO Auto-generated method stub
 		return null;
 	}
