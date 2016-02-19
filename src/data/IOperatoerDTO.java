@@ -1,10 +1,10 @@
 package data;
 
 public interface IOperatoerDTO {
-	int oprId();                     
-	String oprNavn();                
-	String ini();   //Initialer               
-	int cpr();                 
-	String password();
+	int getID();                     
+	String getNavn();                
+	String getIni();   //Initialer               
+	int getCpr();                 
+	String getPassword();
 
 }
