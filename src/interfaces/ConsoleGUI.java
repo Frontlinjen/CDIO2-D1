@@ -34,4 +34,21 @@ public class ConsoleGUI implements IGUI{
 		System.out.println("Indtast CPR: ");
 		return input.next();
 	}
+	@Override
+	public void showMessage(String message) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public int getUserSelection(String... strings) {
+		System.out.println("Du har nu følgende valgmuligheder: ");
+		for (int i = 0; i < strings.length; i++) {
+			System.out.println(String.format("%i.\t%s", i, strings[i]));
+		}
+		return input.nextInt();
+	}
+	@Override
+	public String getString() {
+		return input.next();
+	}
 }
