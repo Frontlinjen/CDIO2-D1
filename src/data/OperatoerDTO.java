@@ -7,6 +7,14 @@ public class OperatoerDTO {
     private int cpr;                 
     private String password;
     
+    public OperatoerDTO(int oprId, String oprNavn, String ini, int cpr, String password){
+    	this.oprId = oprId;
+    	this.oprNavn = oprNavn;
+    	this.ini = ini;
+    	this.cpr = cpr;
+    	this.password = password;
+    }
+    
     public int getID(){
     	return oprId;
     }
