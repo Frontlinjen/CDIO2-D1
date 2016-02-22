@@ -32,7 +32,7 @@ public class ConsoleGUI implements IGUI{
 	@Override
 	public int getCpr() {
 		System.out.println("Indtast CPR: ");
-		return input.next();
+		return input.nextInt();
 	}
 	@Override
 	public void showMessage(String message) {
@@ -40,7 +40,7 @@ public class ConsoleGUI implements IGUI{
 	}
 	@Override
 	public int getUserSelection(String... strings) {
-		System.out.println("Du har nu følgende valgmuligheder: ");
+		System.out.println("Du har nu fï¿½lgende valgmuligheder: ");
 		for (int i = 0; i < strings.length; i++) {
 			System.out.println(String.format("%i.\t%s", i, strings[i]));
 		}
