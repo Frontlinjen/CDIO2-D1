@@ -32,7 +32,7 @@ public class ConsoleGUI implements IGUI{
 	@Override
 	public int getCpr() {
 		System.out.println("Indtast CPR: ");
-		return input.next();
+		return input.nextInt();
 	}
 	@Override
 	public void showMessage(String message) {
