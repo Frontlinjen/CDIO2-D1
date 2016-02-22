@@ -2,6 +2,7 @@ package controllers;
 
 import data.IOperatoerDTO;
 import functionality.IOperatoerDAO;
+import functionality.OperatoerDAOMemory;
 import interfaces.IGUI;
 import functionality.IOperatoerDAO;
 import functionality.IOperatoerDAO.DALException;
@@ -10,6 +11,9 @@ public class MainMenu {
 	IGUI gui;
 	IOperatoerDAO func;
 	IOperatoerDTO user;
+	public static void main(String[] args) {
+		//MainMenu start = new MainMenu(new ConsoleGUI))
+	}
 	
 	public MainMenu(IGUI gui, IOperatoerDAO func)
 	{
@@ -41,25 +45,42 @@ public class MainMenu {
 					int selection = -1;
 					if(user.getID()==10)
 					{
-						selection = gui.getUserSelection("Ændre password", "Tilgå applikation");
+						selection = gui.getUserSelection("Ændre password", "Start vægt programmet");
 					}
 					else
 					{
-						selection = gui.getUserSelection("Ændre password", "Tilgå applikation","Opret ny bruger");
+						selection = gui.getUserSelection("Ændre password", "Start vægt programmet", "Opret ny bruger");
 					}
 					switch(selection)
 					{
 						case 0:
 						{
-							
+							String prevPass = gui.getUserString("Indtast forrige password:");
+							if(prevPass.equals(user.getPassword()))
+							{
+								String newPass = gui.getUserString("Indtast det nye password:");
+								if(newPass.equals(gui.getUserString("Indtast det nye password igen:")))
+									{
+										user.setPassword(newPass);
+										func.updateOperatoer(user);
+									}
+								else
+								{
+									gui.showMessage("De nye passwords matchede ikke");
+								}
+							}
+							else
+									gui.showMessage("Forkert kode");
 						}
 						case 1:
 						{
-							
+							WeightMenu wMenu = new WeightMenu(gui, func, user);
+							wMenu.execute();
 						}
 						case 2:
 						{
-							
+							CreateNewUser menu = new CreateNewUser(gui, func, user);
+							menu.execute();
 						}
 					}
 				}
