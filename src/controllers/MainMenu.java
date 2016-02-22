@@ -7,9 +7,9 @@ import functionality.IOperatoerDAO;
 import functionality.IOperatoerDAO.DALException;
 
 public class MainMenu {
-	IGUI gui;
-	IOperatoerDAO func;
-	IOperatoerDTO user;
+	private IGUI gui;
+	private IOperatoerDAO func;
+	private IOperatoerDTO user;
 	
 	public MainMenu(IGUI gui, IOperatoerDAO func)
 	{
