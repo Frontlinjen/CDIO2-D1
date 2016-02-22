@@ -54,6 +54,12 @@ public class ConsoleGUI implements IGUI{
 	@Override
 	public int getUserInt(String message) {
 		System.out.println(message);
-		return input.nextInt();
+		try{
+			return input.nextInt();
+		} 
+		catch(Exception e){
+			System.out.println("Indtast et helttal");
+			return getUserInt(message);
+		}
 	}
 }
