@@ -51,4 +51,9 @@ public class ConsoleGUI implements IGUI{
 		System.out.println(message);
 		return input.next();
 	}
+	@Override
+	public int getUserInt(String message) {
+		System.out.println(message);
+		return input.nextInt();
+	}
 }

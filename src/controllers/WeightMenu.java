@@ -7,10 +7,9 @@ import functionality.IOperatoerDAO;
 import interfaces.IGUI;
 
 public class WeightMenu {
-	Scanner input = new Scanner(System.in);
-	IGUI gui;
-	IOperatoerDAO func;
-	IOperatoerDTO user;
+	private IGUI gui;
+	private IOperatoerDAO func;
+	private IOperatoerDTO user;
 	
 	public WeightMenu(IGUI gui, IOperatoerDAO func, IOperatoerDTO user){
 		this.gui = gui;
@@ -19,19 +18,18 @@ public class WeightMenu {
 	}
 	
 	public void execute(){
-		while(true){
+		boolean exit = false;
+		while(!exit){
 			int selection;
 			selection = gui.getUserSelection("Start vægt", "exit");
 			switch(selection){
 				case 0: {
-					System.out.println("Indtast tara-vægten i kg:");
-					int i = input.nextInt();
-					System.out.println("Indtast brutto-vægten i kg:");
-					int j = input.nextInt();
-					System.out.println("Netto-vægten er: " + (j-i) + " kg");
+					int i = gui.getUserInt("Indtast tara-vægten i kg:");
+					int j = gui.getUserInt("Indtast brutto-vægten i kg:");
+					gui.showMessage("Netto-vægten er: " + (j-i) + " kg");
 				}
 				case 1: {
-					
+					exit = true;
 				}
 			}
 		}

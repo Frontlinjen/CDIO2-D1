@@ -9,4 +9,5 @@ public interface IGUI {
 	public void showMessage(String message);
 	public String getUserString(String message);
 	public int getUserSelection(String... strings);
+	public int getUserInt(String message);
 }
