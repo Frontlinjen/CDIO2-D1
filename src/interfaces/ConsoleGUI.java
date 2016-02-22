@@ -42,7 +42,7 @@ public class ConsoleGUI implements IGUI{
 	public int getUserSelection(String... strings) {
 		System.out.println("Du har nu f�lgende valgmuligheder: ");
 		for (int i = 0; i < strings.length; i++) {
-			System.out.println(String.format("%i.\t%s", i, strings[i]));
+			System.out.println(String.format("%d.\t%s", i, strings[i]));
 		}
 		return input.nextInt();
 	}
