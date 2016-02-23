@@ -24,12 +24,14 @@ public class WeightMenu {
 			selection = gui.getUserSelection("Start vægt", "exit");
 			switch(selection){
 				case 0: {
-					int i = gui.getUserInt("Indtast tara-vægten i kg:");
-					int j = gui.getUserInt("Indtast brutto-vægten i kg:");
+					double i = gui.getUserDouble("Indtast tara-vægten i kg:");
+					double j = gui.getUserDouble("Indtast brutto-vægten i kg:");
 					gui.showMessage("Netto-vægten er: " + (j-i) + " kg");
+					break;
 				}
 				case 1: {
 					exit = true;
+					break;
 				}
 			}
 		}
