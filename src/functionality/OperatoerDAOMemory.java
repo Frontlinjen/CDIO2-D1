@@ -45,14 +45,7 @@ public class OperatoerDAOMemory implements IOperatoerDAO{
 			throw new DALException(e.getMessage());
 		}
 	}
-	private int getAvailableID() throws DALException
-	{
-		do
-		{
-			
-		}
-		while()
-	}
+
 	@Override
 	public void updateOperatoer(IOperatoerDTO opr) throws DALException {
 		for (int i = 0; i < data.size(); i++) {
