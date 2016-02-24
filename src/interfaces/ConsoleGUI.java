@@ -7,7 +7,6 @@ import data.OperatoerDTO;
 public class ConsoleGUI implements IGUI{
 	Scanner input = new Scanner(System.in);
 
-	
 
 	@Override
 	public String getPassword() {
@@ -16,8 +15,7 @@ public class ConsoleGUI implements IGUI{
 	}
 	@Override
 	public int getUID() {
-		System.out.println("Indtast brugerID: ");
-		return input.nextInt();
+		return getUserInt();
 	}
 	@Override
 	public String getName() {
@@ -62,4 +60,14 @@ public class ConsoleGUI implements IGUI{
 			return getUserDouble(message);
 		}
 	}
+	
+	public double getUserInt(String message) {
+		System.out.println(message);
+		try{
+			return input.nextInt();
+		} 
+		catch(Exception e){
+			System.out.println("Indtast et tal");
+			return getUserInt(message);
+		}
 }
