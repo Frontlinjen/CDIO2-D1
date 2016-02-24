@@ -101,6 +101,7 @@ public class MainMenu {
 							case 2:
 							{
 								user = null;
+								break;
 							}
 							case 3:
 							{
