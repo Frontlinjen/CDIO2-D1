@@ -29,8 +29,21 @@ public class OperatoerDAOMemory implements IOperatoerDAO{
 	@Override
 	public void createOperatoer(IOperatoerDTO opr) throws DALException {
 		data.add(opr);
+		//Opdaterer ID efter hvor den blev tilføjet til databasen
+		if(opr.getID()==-1)
+			opr.setID(getAvailableID());
 	}
-
+	private int getAvailableID() throws DALException
+	{
+		for(int i=0;i<Integer.MAX_VALUE;++i)
+		{
+			if(getOperatoer(i)==null)
+			{
+				return i;
+			}
+		}
+		throw new DALException("Ran out of available ID's!");
+	}
 	@Override
 	public void updateOperatoer(IOperatoerDTO opr) throws DALException {
 		for (int i = 0; i < data.size(); i++) {
