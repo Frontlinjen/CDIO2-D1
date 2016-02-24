@@ -13,7 +13,7 @@ public class OperatoerDAOMemory implements IOperatoerDAO{
 
 	public OperatoerDAOMemory() {
 		Integer numbers[] = new Integer[100-11];
-		for (int i = 0; i < numbers.length+1; i++) {
+		for (int i = 0; i < numbers.length; i++) {
 			numbers[i] = i+11;
 		}
 		availableNumbers = new ShuffleBag<Integer>(numbers);
@@ -39,10 +39,14 @@ public class OperatoerDAOMemory implements IOperatoerDAO{
 	public void createOperatoer(IOperatoerDTO opr) throws DALException {
 		data.add(opr);
 		//Opdaterer ID efter hvor den blev tilføjet til databasen
-		try {
-			opr.setID(availableNumbers.getNext());
-		} catch (Exception e) {
-			throw new DALException(e.getMessage());
+		if(opr.getID()==-1)
+		{
+			try {
+				
+				opr.setID(availableNumbers.getNext());
+			} catch (Exception e) {
+				throw new DALException(e.getMessage());
+			}
 		}
 	}
 
