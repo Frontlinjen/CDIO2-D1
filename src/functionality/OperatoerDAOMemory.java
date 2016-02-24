@@ -4,12 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import data.IOperatoerDTO;
+import utilities.ShuffleBag;
 
 public class OperatoerDAOMemory implements IOperatoerDAO{
 
+	private ShuffleBag<Integer> availableNumbers;
 	private List<IOperatoerDTO> data = new ArrayList<IOperatoerDTO>();
 
-	
+	public OperatoerDAOMemory() {
+		Integer numbers[] = new Integer[100-11];
+		for (int i = 0; i < numbers.length+1; i++) {
+			numbers[i] = i+11;
+		}
+		availableNumbers = new ShuffleBag<Integer>(numbers);
+		
+	}
 	@Override
 	public IOperatoerDTO getOperatoer(int oprId) throws DALException {
 		for (IOperatoerDTO operator : data) {
@@ -30,19 +39,19 @@ public class OperatoerDAOMemory implements IOperatoerDAO{
 	public void createOperatoer(IOperatoerDTO opr) throws DALException {
 		data.add(opr);
 		//Opdaterer ID efter hvor den blev tilføjet til databasen
-		if(opr.getID()==-1)
-			opr.setID(getAvailableID());
+		try {
+			opr.setID(availableNumbers.getNext());
+		} catch (Exception e) {
+			throw new DALException(e.getMessage());
+		}
 	}
 	private int getAvailableID() throws DALException
 	{
-		for(int i=0;i<Integer.MAX_VALUE;++i)
+		do
 		{
-			if(getOperatoer(i)==null)
-			{
-				return i;
-			}
+			
 		}
-		throw new DALException("Ran out of available ID's!");
+		while()
 	}
 	@Override
 	public void updateOperatoer(IOperatoerDTO opr) throws DALException {
