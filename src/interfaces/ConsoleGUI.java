@@ -55,6 +55,7 @@ public class ConsoleGUI implements IGUI{
 		} 
 		catch(Exception e){
 			System.out.println("Indtast et tal");
+			input.next();
 			return getUserDouble(message);
 		}
 	}
@@ -66,6 +67,7 @@ public class ConsoleGUI implements IGUI{
 		}
 		catch(Exception e){
 			System.out.println("Indtast et tal");
+			input.next();
 			return getUserInt(message);
 		}
 	}
