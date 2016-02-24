@@ -20,7 +20,12 @@ public class ConsoleGUI implements IGUI{
 	@Override
 	public String getName() {
 		System.out.println("Indtast navn: ");
-		return input.nextLine();
+		input.nextLine();
+		if(input.hasNextLine())
+			return input.nextLine();
+		else
+			return null; //Never reached as hasNextLine waits for input
+		
 	}
 	@Override
 	public String getIni() {
@@ -37,10 +42,11 @@ public class ConsoleGUI implements IGUI{
 	}
 	@Override
 	public int getUserSelection(String... strings) {
+		System.out.println("Du har nu følgende muligheder:");
 		for (int i = 0; i < strings.length; i++) {
 			System.out.println(String.format("%d.\t%s", i, strings[i]));
 		}
-		return getUserInt("Du har nu fï¿½lgende valgmuligheder: ");
+		return getUserInt("");
 	}
 	@Override
 	public String getUserString(String message) {
