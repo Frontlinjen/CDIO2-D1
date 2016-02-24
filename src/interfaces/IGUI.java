@@ -10,4 +10,5 @@ public interface IGUI {
 	public String getUserString(String message);
 	public int getUserSelection(String... strings);
 	public double getUserDouble(String message);
+	public int getUserInt(String message);
 }
