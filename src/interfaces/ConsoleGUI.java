@@ -15,7 +15,7 @@ public class ConsoleGUI implements IGUI{
 	}
 	@Override
 	public int getUID() {
-		return getUserInt();
+		return getUserInt("Indtast brugerID: ");
 	}
 	@Override
 	public String getName() {
@@ -29,8 +29,7 @@ public class ConsoleGUI implements IGUI{
 	}
 	@Override
 	public int getCpr() {
-		System.out.println("Indtast CPR: ");
-		return input.nextInt();
+		return getUserInt("Indtast CPR: ");
 	}
 	@Override
 	public void showMessage(String message) {
@@ -38,11 +37,10 @@ public class ConsoleGUI implements IGUI{
 	}
 	@Override
 	public int getUserSelection(String... strings) {
-		System.out.println("Du har nu f�lgende valgmuligheder: ");
 		for (int i = 0; i < strings.length; i++) {
 			System.out.println(String.format("%d.\t%s", i, strings[i]));
 		}
-		return input.nextInt();
+		return getUserInt("Du har nu f�lgende valgmuligheder: ");
 	}
 	@Override
 	public String getUserString(String message) {
@@ -61,13 +59,14 @@ public class ConsoleGUI implements IGUI{
 		}
 	}
 	
-	public double getUserInt(String message) {
+	public int getUserInt(String message) {
 		System.out.println(message);
 		try{
 			return input.nextInt();
-		} 
+		}
 		catch(Exception e){
 			System.out.println("Indtast et tal");
 			return getUserInt(message);
 		}
+	}
 }
