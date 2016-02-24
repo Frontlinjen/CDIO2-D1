@@ -17,6 +17,7 @@ public class MainMenu {
 		OperatoerDAOMemory func = new OperatoerDAOMemory();
 		try {
 			func.createOperatoer(new OperatoerDTO(22, "Test1", "TS1", 0022, "sesame"));
+			func.createOperatoer(new OperatoerDTO(10, "Admin", "SU", 666, "admin"));
 		} catch (DALException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -62,11 +63,11 @@ public class MainMenu {
 						int selection = -1;
 						if(user.getID()==10)
 						{
-							selection = gui.getUserSelection("Ændre password", "Start vægt programmet", "Opret ny bruger");
+							selection = gui.getUserSelection("Ændre password", "Start vægt programmet", "Logud", "Opret ny bruger");
 						}
 						else
 						{
-							selection = gui.getUserSelection("Ændre password", "Start vægt programmet");
+							selection = gui.getUserSelection("Ændre password", "Start vægt programmet", "Logud");
 							
 						}
 						switch(selection)
@@ -98,6 +99,10 @@ public class MainMenu {
 								break;
 							}
 							case 2:
+							{
+								user = null;
+							}
+							case 3:
 							{
 								CreateNewUser menu = new CreateNewUser(gui, func, user);
 								menu.execute();
