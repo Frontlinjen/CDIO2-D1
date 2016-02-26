@@ -38,7 +38,7 @@ public class CreateNewUser {
 		ShuffleBag<Integer> possibilitySelector = new ShuffleBag<Integer>(possibilities);
 		String password = "";
 		char[] symbols =  {'.', '-', '_', '+', '!', '?', '='} ;
-		System.out.println("Generating password of " + length + " symbols");
+		System.out.println("Genererer kodeord af " + length + " symboler");
 		while(--length>=0)
 		{
 			try {
@@ -77,7 +77,7 @@ public class CreateNewUser {
 		try
 		{
 			func.createOperatoer(newUser);
-			gui.showMessage("New account created with ID: " + newUser.getID() + " and pass: " + password);
+			gui.showMessage("Ny account skabt med ID: " + newUser.getID() + " og adgangskode: " + password);
 		}
 		catch(Exception e)
 		{
