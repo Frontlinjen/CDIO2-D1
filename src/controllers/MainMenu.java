@@ -92,7 +92,7 @@ public class MainMenu {
 							}
 							case 1:
 							{
-								WeightMenu wMenu = new WeightMenu(gui, func, user);
+								WeightMenu wMenu = new WeightMenu(gui);
 								wMenu.execute();
 								break;
 							}
