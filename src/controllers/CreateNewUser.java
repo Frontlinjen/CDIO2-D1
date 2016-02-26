@@ -25,7 +25,7 @@ public class CreateNewUser {
 		Random rng = new Random(System.currentTimeMillis());
 		//Max length of 15 characters
 		int length = rng.nextInt(10)+6;
-		int count = ((length%RULECOUNT)+length);
+		int count = (RULECOUNT-(length%RULECOUNT)+length);
 		//Number of possibilities to fulfill the requirements
 		
 		Integer[] possibilities = new Integer[count];
