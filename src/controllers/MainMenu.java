@@ -16,7 +16,6 @@ public class MainMenu {
 	public static void main(String[] args) {
 		OperatoerDAOMemory func = new OperatoerDAOMemory();
 		try {
-			func.createOperatoer(new OperatoerDTO(22, "Test1", "TS1", 0022, "sesame"));
 			func.createOperatoer(new OperatoerDTO(10, "Admin", "SU", 666, "admin"));
 		} catch (DALException e) {
 			// TODO Auto-generated catch block
