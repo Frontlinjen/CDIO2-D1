@@ -45,7 +45,7 @@ public class OperatoerDAOMemory implements IOperatoerDAO{
 				
 				opr.setID(availableNumbers.getNext());
 			} catch (Exception e) {
-				throw new DALException(e.getMessage());
+				throw new DALException("User limit reached");
 			}
 		}
 	}
