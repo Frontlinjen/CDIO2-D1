@@ -61,11 +61,11 @@ public class MainMenu {
 						int selection = -1;
 						if(user.getID()==10)
 						{
-							selection = gui.getUserSelection("Ændre password", "Start vægt programmet", "Logud", "Opret ny bruger");
+							selection = gui.getUserSelection("\u04D4" + "ndre password", "Start v" + "\u04D5" + "gt programmet", "Logud", "Opret ny bruger");
 						}
 						else
 						{
-							selection = gui.getUserSelection("Ændre password", "Start vægt programmet", "Logud");
+							selection = gui.getUserSelection("\u04D4" + "ndre password", "Start v" + "\u04D5" + "gt programmet", "Logud");
 							
 						}
 						switch(selection)

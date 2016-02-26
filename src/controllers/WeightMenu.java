@@ -13,12 +13,12 @@ public class WeightMenu {
 		boolean exit = false;
 		while(!exit){
 			int selection;
-			selection = gui.getUserSelection("Start vægt", "exit");
+			selection = gui.getUserSelection("Start v" + "\u04D5" + "gt", "exit");
 			switch(selection){
 				case 0: {
-					double i = gui.getUserDouble("Indtast tara-vægten i kg:");
-					double j = gui.getUserDouble("Indtast brutto-vægten i kg:");
-					gui.showMessage("Netto-vægten er: " + (j-i) + " kg");
+					double i = gui.getUserDouble("Indtast tara-v" + "\u04D5" + "gten i kg:");
+					double j = gui.getUserDouble("Indtast brutto-v" + "\u04D5" + "gten i kg:");
+					gui.showMessage("Netto-v" + "\u04D5" + "gten er: " + (j-i) + " kg");
 					break;
 				}
 				case 1: {

@@ -41,7 +41,7 @@ public class ConsoleGUI implements IGUI{
 	}
 	@Override
 	public int getUserSelection(String... strings) {
-		System.out.println("Du har nu følgende muligheder:");
+		System.out.println("Du har nu f" + "\u00F8" + "lgende muligheder:");
 		for (int i = 0; i < strings.length; i++) {
 			System.out.println(String.format("%d.\t%s", i, strings[i]));
 		}
