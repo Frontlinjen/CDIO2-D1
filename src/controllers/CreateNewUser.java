@@ -77,11 +77,11 @@ public class CreateNewUser {
 		try
 		{
 			func.createOperatoer(newUser);
-			gui.showMessage("Ny account skabt med ID: " + newUser.getID() + " og adgangskode: " + password);
+			gui.showMessage("Ny bruger skabt med ID: " + newUser.getID() + " og adgangskode: " + password);
 		}
 		catch(Exception e)
 		{
-			gui.showMessage("Der skete en fejl da brugeren blev forsøgt oprettet: " + e.getMessage());
+			gui.showMessage("Der skete en fejl da brugeren blev forsï¿½gt oprettet: " + e.getMessage());
 		}
 		
 	}
