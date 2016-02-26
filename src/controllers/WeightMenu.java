@@ -1,32 +1,24 @@
 package controllers;
 
-import java.util.Scanner;
-
-import data.IOperatoerDTO;
-import functionality.IOperatoerDAO;
 import interfaces.IGUI;
 
 public class WeightMenu {
 	private IGUI gui;
-	private IOperatoerDAO func;
-	private IOperatoerDTO user;
 	
-	public WeightMenu(IGUI gui, IOperatoerDAO func, IOperatoerDTO user){
+	public WeightMenu(IGUI gui){
 		this.gui = gui;
-		this.func = func;
-		this.user = user;
 	}
 	
 	public void execute(){
 		boolean exit = false;
 		while(!exit){
 			int selection;
-			selection = gui.getUserSelection("Start vægt", "exit");
+			selection = gui.getUserSelection("Start v" + "\u00E6" + "gt", "exit");
 			switch(selection){
 				case 0: {
-					double i = gui.getUserDouble("Indtast tara-vægten i kg:");
-					double j = gui.getUserDouble("Indtast brutto-vægten i kg:");
-					gui.showMessage("Netto-vægten er: " + (j-i) + " kg");
+					double i = gui.getUserDouble("Indtast tara-v" + "\u00E6" + "gten i kg:");
+					double j = gui.getUserDouble("Indtast brutto-v" + "\u00E6" + "gten i kg:");
+					gui.showMessage("Netto-v" + "\u00E6" + "gten er: " + (j-i) + " kg");
 					break;
 				}
 				case 1: {

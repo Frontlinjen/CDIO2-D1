@@ -25,7 +25,7 @@ public class CreateNewUser {
 		Random rng = new Random(System.currentTimeMillis());
 		//Max length of 15 characters
 		int length = rng.nextInt(10)+6;
-		int count = ((length%RULECOUNT)+length);
+		int count = (RULECOUNT-(length%RULECOUNT)+length);
 		//Number of possibilities to fulfill the requirements
 		
 		Integer[] possibilities = new Integer[count];
@@ -38,7 +38,7 @@ public class CreateNewUser {
 		ShuffleBag<Integer> possibilitySelector = new ShuffleBag<Integer>(possibilities);
 		String password = "";
 		char[] symbols =  {'.', '-', '_', '+', '!', '?', '='} ;
-		System.out.println("Generating password of " + length + " symbols");
+		System.out.println("Genererer kodeord af " + length + " symboler");
 		while(--length>=0)
 		{
 			try {
@@ -77,11 +77,11 @@ public class CreateNewUser {
 		try
 		{
 			func.createOperatoer(newUser);
-			gui.showMessage("New account created with ID: " + newUser.getID() + " and pass: " + password);
+			gui.showMessage("Ny bruger skabt med ID: " + newUser.getID() + " og adgangskode: " + password);
 		}
 		catch(Exception e)
 		{
-			gui.showMessage("Der skete en fejl da brugeren blev forsøgt oprettet: " + e.getMessage());
+			gui.showMessage("Der skete en fejl da brugeren blev forsï¿½gt oprettet: " + e.getMessage());
 		}
 		
 	}

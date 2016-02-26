@@ -6,6 +6,11 @@ import data.IOperatoerDTO;
 public interface IOperatoerDAO {
 		class DALException extends Exception
 		{
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = -1718710227140187189L;
+
 			public DALException(String desc)
 			{
 				super(desc);
