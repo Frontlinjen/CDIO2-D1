@@ -72,22 +72,8 @@ public class MainMenu {
 						{
 							case 0:
 							{
-								String prevPass = gui.getUserString("Indtast forrige password:");
-								if(prevPass.equals(user.getPassword()))
-								{
-									String newPass = gui.getUserString("Indtast det nye password:");
-									if(newPass.equals(gui.getUserString("Indtast det nye password igen:")))
-										{
-											user.setPassword(newPass);
-											func.updateOperatoer(user);
-										}
-									else
-									{
-										gui.showMessage("De nye passwords matchede ikke");
-									}
-								}
-								else
-										gui.showMessage("Forkert kode");
+								ChangePassword passMenu = new ChangePassword(gui, func, user);
+								passMenu.execute();
 								break;
 							}
 							case 1:
