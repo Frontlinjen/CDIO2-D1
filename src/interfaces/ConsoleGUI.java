@@ -1,7 +1,6 @@
 package interfaces;
 
 import java.util.Scanner;
-import data.OperatoerDTO;
 
 
 public class ConsoleGUI implements IGUI{

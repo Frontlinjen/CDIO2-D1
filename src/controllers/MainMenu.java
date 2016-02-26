@@ -6,7 +6,6 @@ import functionality.IOperatoerDAO;
 import functionality.OperatoerDAOMemory;
 import interfaces.ConsoleGUI;
 import interfaces.IGUI;
-import functionality.IOperatoerDAO;
 import functionality.IOperatoerDAO.DALException;
 
 public class MainMenu {

@@ -1,7 +1,5 @@
 package controllers;
 
-import java.util.Scanner;
-
 import data.IOperatoerDTO;
 import functionality.IOperatoerDAO;
 import interfaces.IGUI;
