@@ -1,20 +1,12 @@
 package controllers;
 
-import java.util.Scanner;
-
-import data.IOperatoerDTO;
-import functionality.IOperatoerDAO;
 import interfaces.IGUI;
 
 public class WeightMenu {
 	private IGUI gui;
-	private IOperatoerDAO func;
-	private IOperatoerDTO user;
 	
-	public WeightMenu(IGUI gui, IOperatoerDAO func, IOperatoerDTO user){
+	public WeightMenu(IGUI gui){
 		this.gui = gui;
-		this.func = func;
-		this.user = user;
 	}
 	
 	public void execute(){

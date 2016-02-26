@@ -6,7 +6,6 @@ import functionality.IOperatoerDAO;
 import functionality.OperatoerDAOMemory;
 import interfaces.ConsoleGUI;
 import interfaces.IGUI;
-import functionality.IOperatoerDAO;
 import functionality.IOperatoerDAO.DALException;
 
 public class MainMenu {
@@ -16,7 +15,6 @@ public class MainMenu {
 	public static void main(String[] args) {
 		OperatoerDAOMemory func = new OperatoerDAOMemory();
 		try {
-			func.createOperatoer(new OperatoerDTO(22, "Test1", "TS1", 0022, "sesame"));
 			func.createOperatoer(new OperatoerDTO(10, "Admin", "SU", 666, "admin"));
 		} catch (DALException e) {
 			// TODO Auto-generated catch block
@@ -94,7 +92,7 @@ public class MainMenu {
 							}
 							case 1:
 							{
-								WeightMenu wMenu = new WeightMenu(gui, func, user);
+								WeightMenu wMenu = new WeightMenu(gui);
 								wMenu.execute();
 								break;
 							}
